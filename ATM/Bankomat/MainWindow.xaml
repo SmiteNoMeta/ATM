@@ -1,0 +1,125 @@
+﻿<Window x:Class="Bankomat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bankomat"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1200">
+    <Window.Resources>
+        <ResourceDictionary>
+            <!-- Polski -->
+            <ResourceDictionary x:Key="PolishTexts">
+                <sys:String x:Key="TransactionWithCard">Transakcja z kartą</sys:String>
+                <sys:String x:Key="TransactionWithoutCard">Transakcja bez karty</sys:String>
+                <sys:String x:Key="TransactionText">Transakcja</sys:String>
+                <sys:String x:Key="Currency">Waluta</sys:String>
+                <sys:String x:Key="Insert">Proszę włożyć kartę i poczekać.</sys:String>
+                <sys:String x:Key="Pin">Proszę wpisać dane karty</sys:String>
+                <sys:String x:Key="Confirm">Potwierdź</sys:String>
+                <sys:String x:Key="Withdraw">Wypłać</sys:String>
+                <sys:String x:Key="Deposit">Wpłać</sys:String>
+                <sys:String x:Key="WithdrawBlik">Wypłać Blikiem</sys:String>
+                <sys:String x:Key="DepositBlik">Wpłać Blikiem</sys:String>
+                <sys:String x:Key="AccStatus">Stan konta</sys:String>
+                <sys:String x:Key="Welcome">Witaj Użytkowniku!</sys:String>
+                <sys:String x:Key="Wait">Poczekąj chwilę, twój stan konta się drukuje...</sys:String>
+                <sys:String x:Key="Back">Powrót</sys:String>
+                <sys:String x:Key="Confirmation">Potwierdzenie</sys:String>
+                <sys:String x:Key="Yes">Tak</sys:String>
+                <sys:String x:Key="No">Nie</sys:String>
+                <sys:String x:Key="Blik">Podaj kod Blik</sys:String>
+                <sys:String x:Key="Banknotes">Włóż banknoty do bankomatu</sys:String>
+                <sys:String x:Key="Banknotes2">Włóż do bankomatu niepogięte i całe banknoty</sys:String>
+                <sys:String x:Key="New">Nowy stan konta</sys:String>
+                <sys:String x:Key="Not">Nie masz wystarczających środków na koncie.</sys:String>
+                <sys:String x:Key="Your">Twój stan konta to</sys:String>
+                <sys:String x:Key="incorrect">Błędny PIN</sys:String>
+                <sys:String x:Key="Correct">Poprawny PIN, proszę czekać...</sys:String>
+            </ResourceDictionary>
+
+            <!-- Angielski -->
+            <ResourceDictionary x:Key="EnglishTexts">
+                <sys:String x:Key="TransactionWithCard">Transaction with Card</sys:String>
+                <sys:String x:Key="TransactionWithoutCard">Transaction without Card</sys:String>
+                <sys:String x:Key="TransactionText">Transaction</sys:String>
+                <sys:String x:Key="Currency">Currency</sys:String>
+                <sys:String x:Key="Insert">Please, insert your credit card</sys:String>
+                <sys:String x:Key="Pin">Please, Enter your credit details</sys:String>
+                <sys:String x:Key="Confirm">Confirm</sys:String>
+                <sys:String x:Key="Withdraw">Withdraw</sys:String>
+                <sys:String x:Key="Deposit">Deposit</sys:String>
+                <sys:String x:Key="WithdrawBlik">Withdraw by Blik</sys:String>
+                <sys:String x:Key="DepositBlik">Deposit by Blik</sys:String>
+                <sys:String x:Key="AccStatus">Account status</sys:String>
+                <sys:String x:Key="Welcome">Welcome User!</sys:String>
+                <sys:String x:Key="Wait">Wait a moment, your account balance is printing...</sys:String>
+                <sys:String x:Key="Back">Return</sys:String>
+                <sys:String x:Key="Confirmation">Confirmation</sys:String>
+                <sys:String x:Key="Yes">Yes</sys:String>
+                <sys:String x:Key="No">No</sys:String>
+                <sys:String x:Key="Blik">Enter the Blik code</sys:String>
+                <sys:String x:Key="Banknotes">Insert banknotes into the ATM</sys:String>
+                <sys:String x:Key="Banknotes2">Insert unbent and whole banknotes into the ATM</sys:String>
+                <sys:String x:Key="New">New account balance</sys:String>
+                <sys:String x:Key="Not">You don't have enough funds in your account.</sys:String>
+                <sys:String x:Key="Your">Your account balance</sys:String>
+                <sys:String x:Key="incorrect">Incorrent PIN</sys:String>
+                <sys:String x:Key="Correct">Correct PIN, please wait...</sys:String>
+            </ResourceDictionary>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="DarkBlue">
+        <TextBlock x:Name="Fifty3" Margin="200,440,850,320" Foreground="White" FontWeight="Bold" FontSize="40" Text="50"/>
+        <TextBlock x:Name="Twenty2" Margin="200,280,850,480" Foreground="White" FontWeight="Bold" FontSize="40" Text="20"/>
+        <TextBlock x:Name="Onehundred3" Margin="200,600,850,160" Foreground="White" FontWeight="Bold" FontSize="40" Text="100"/>
+        <TextBlock x:Name="Infor" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" FontWeight="Bold" TextWrapping="Wrap" Height="300" Width="700"/>
+        <TextBox x:Name="Fifty2" Margin="400,440,400,320" FontWeight="Bold" FontSize="40"/>
+        <TextBox x:Name="Twenty" Margin="400,280,400,480" FontWeight="Bold" FontSize="40"/>
+        <TextBox x:Name="Onehundred2" Margin="400,600,400,160" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="Confirm2" Click="AddToAccount" Margin="400,740,400,20" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="Yes2" Click="Yes_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="No2" Click="No_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="BlikBtn" Click="Blik_Click" Margin="0,620,735,40" FontWeight="Bold" FontSize="40"/>
+        <TextBox x:Name="BlikCode" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" FontWeight="Bold" TextWrapping="Wrap" Height="200" Width="600"/>
+        <Button x:Name="Yes" Click="Yes_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="No" Click="No_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="40"/>
+        <TextBlock x:Name="RightText" Margin="100" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="White" FontSize="50" FontWeight="Bold" TextWrapping="Wrap" Height="166" Width="488"/>
+        <Button x:Name="Back" Click="Back_Click" Margin="0,60,735,600" FontWeight="Bold" FontSize="40"/>
+        <TextBox x:Name="Amount" Margin="735,620,0,140" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="Fifty" Click="WithdrawMoney_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="40" Content="50"/>
+        <Button x:Name="Onehundred" Click="WithdrawMoney_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="40" Content="100"/>
+        <Button x:Name="Twohundred" Click="WithdrawMoney_Click" Margin="0,620,735,40" FontWeight="Bold" FontSize="40" Content="200"/>
+        <Button x:Name="ConfirmMoney" Click="WithdrawMoney_Click" Margin="735,720,0,40" FontWeight="Bold" FontSize="40" Content="Wypłać"/>
+        <TextBlock x:Name="Wait" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="50" FontWeight="Bold" TextWrapping="Wrap" Height="200" Width="600"/>
+        <Button x:Name="Withdraw" Click="Withdraw_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="Deposit" Click="Deposit_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="WithdrawBlik" Click="WithdrawBlik_Click" Margin="0,620,735,40" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="DepositBlik" Click="DepositBlik_Click" Margin="735,620,0,40" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="Status" Click="Status_Click" Margin="735,60,0,600" FontWeight="Bold" FontSize="40"/>
+        <TextBlock x:Name="Welcome" Margin="100" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="50" FontWeight="Bold" TextWrapping="Wrap" Height="166" Width="488"/>
+        <Button x:Name="PinBtn" Click="ConfirmButton_Click" Margin="0,670,735,50" FontWeight="Bold" FontSize="40"/>
+        <TextBox x:Name="Pin" Margin="400,480,400,280" FontWeight="Bold" FontSize="40"/>
+        <TextBox x:Name="Card" Margin="400,300,400,460" FontWeight="Bold" FontSize="40"/>
+        <Button x:Name="Pln" Click="Currency_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="40" Content="PLN"/>
+        <Button x:Name="Eur" Click="Currency_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="40" Content="EUR"/>
+        <Button x:Name="Usd" Click="Currency_Click" Margin="0,620,735,40" FontWeight="Bold" FontSize="40" Content="USD"/>
+        <Button x:Name="TransactionWithoutCard" Click="TransactionWithoutCard_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="30" Content="Transakcja bez karty"/>
+        <Button x:Name="TransactionWithCard" Click="TransactionWithCard_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="30" Content="Transakcja z kartą"/>
+        <Button x:Name="Polski" Click="Language_Click" Margin="0,340,735,320" FontWeight="Bold" FontSize="40" Content="Polski"/>
+        <Button x:Name="English" Click="Language_Click" Margin="735,340,0,320" FontWeight="Bold" FontSize="40" Content="English"/>
+        <TextBlock x:Name="TransakcjaTextBlock" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="120,45,0,0" Foreground="White" FontSize="50" FontWeight="Bold" TextWrapping="Wrap" Text="Wybierz język..." Height="166" Width="488"/>
+
+        <Button x:Name="Kliknij" Click="Start_Click" FontWeight="Bold" FontSize="50" Foreground="#FFA4BEFF" Content="Kliknij, aby rozpocząć...">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF0014B7" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+
+</Window>
